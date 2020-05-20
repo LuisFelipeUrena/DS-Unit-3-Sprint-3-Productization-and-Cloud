@@ -4,13 +4,16 @@ from web_app.models import db, migrate
 from web_app.routes.twitter_routes import twitter_routes
 from web_app.routes.home_routes import home_routes
 
-DATABASE_URI = "sqlite:///C:\\Users\\_luis\\Desktop\\DS-Unit-3-Sprint-3-Productization-and-Cloud\\Assignments\\mod_1\\web_app.db"
+DATABASE_URI = "sqlite:///C:\\Users\\luis_\\Desktop\\DS-Unit-3-Sprint-3-Productization-and-Cloud\\Assignments\\mod_1\\web_app.db"
+# "sqlite:////Users/_luis/Desktop/DS-Unit-3-Sprint-3-Productization-and-Cloud/Assignments/mod_1/web_app.db"
 
 def create_app():
     app = Flask(__name__)
 
     app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URI
+    
     db.init_app(app)
+    #breakpoint()
     migrate.init_app(app, db)
 
     app.register_blueprint(home_routes)

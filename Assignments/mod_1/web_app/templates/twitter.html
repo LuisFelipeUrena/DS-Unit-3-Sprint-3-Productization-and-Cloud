@@ -16,8 +16,8 @@
     {% if tweets %}
         <ul>
         {% for tweet in tweets %}
-            <li>{{ tweet['tweets'] }}</li>
-            <li>{{ tweet['user'] }}</li>
+            <li>{{ tweet.tweet_id }}</li>
+            <li>{{ tweet.user }}</li>
         {% endfor %}
         </ul>
 
